@@ -1,0 +1,22 @@
+# Django specific
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+myvenv/
+*.sqlite3
+.vscode/
+
+# If you are using PyCharm
+.idea/
+
+# If you are using environment variables to store secrets
+.env
+
+# Ignore the static and media files
+staticfiles/
+media/
+
+# Ignore the migrations
+**/migrations/
