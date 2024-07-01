@@ -27,6 +27,18 @@ class IsAdminOrStaffOrReadOnly(permissions.BasePermission):
 class IsCommentOwnerOrReadOnly(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
+        """
+        Determines if the user has permission to perform the requested action.
+
+        Args:
+            self: The IsCommentOwnerOrReadOnly instance.
+            request (HttpRequest): The HTTP request object.
+            view (View): The view that is being accessed.
+            obj: The object being accessed.
+
+        Returns:
+            bool: True if the user has permission, False otherwise.
+        """
         if request.method in SAFE_METHODS:
             return True
         return obj.owner_of_comment == request.user
